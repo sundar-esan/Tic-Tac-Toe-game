@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik Tac Game</title>
+</head>
+<body>
+    <script>
+
+        var currentPlayer="x";
+          
+          var board = document.createElement('div');
+
+          board.style.height="300px"
+          board.style.width="300px"
+          board.style.display="flex"
+          board.style.flexWrap="wrap"
+           
+
+          for(let index=1; index<=9; index++){
+
+            var box = document.createElement('div');
+
+            box.style.height="100px"
+            box.style.width="32%"
+            box.setAttribute("id",index)
+            box.style.backgroundColor="orange"
+            box.style.border="1px solid black"
+            box.addEventListener("click",function(){
+
+                if (this.innerText.length==0){
+
+                if (currentPlayer == "x"){this.innerText = currentPlayer;
+                                                      currentPlayer="o"}
+                else{this.innerText = currentPlayer;
+                                        currentPlayer="x"}  }                                  
+            }
+            
+            )
+
+
+            
+             board.appendChild(box);
+
+          }
+
+          document.body.appendChild(board)
+
+    </script>
+</body>
+</html>
